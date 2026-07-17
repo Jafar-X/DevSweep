@@ -1,5 +1,14 @@
 # Milestone 1 — Architecture Design
 
+> **Note:** The implementation deviated from this design in a few places.
+> See [ARCHITECTURE.md](../DevSweep/ARCHITECTURE.md) for the current state:
+> - `Scanner` renamed to `StorageScanner` (avoided Foundation's `NSScanner` clash)
+> - `Container` lives in DevSweepCLI, not Core/DI (Core can't import Services)
+> - `Logger.minimumLevel` is `let` not `var` (Swift 6 requires `Sendable` immutability)
+> - Tests use a custom runner at `Sources/TestRunner/` (no XCTest in CLT SDK)
+> - Added `scanIfExists()` convenience on `StorageScanner`
+> - Plugins directory now includes: Homebrew, Java, Node, Python (M2)
+
 ## SPM Module Graph
 
 ```
