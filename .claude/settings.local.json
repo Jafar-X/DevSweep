@@ -6,7 +6,8 @@
       "Bash(swift test *)",
       "Bash(xcode-select -p)",
       "Bash(xcrun --show-sdk-path)",
-      "Bash(swift *)"
+      "Bash(swift *)",
+      "Bash(git rm *)"
     ]
   }
 }

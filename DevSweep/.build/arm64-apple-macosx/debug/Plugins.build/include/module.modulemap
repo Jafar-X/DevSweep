@@ -1,3 +1,0 @@
-module Plugins {
-    header "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/include/Plugins-Swift.h"
-}
