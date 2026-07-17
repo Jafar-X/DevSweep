@@ -21,6 +21,18 @@ AnalyzerRegistry.register(
 AnalyzerRegistry.register(
     PythonAnalyzer(logger: container.logger, scanner: container.scanner)
 )
+AnalyzerRegistry.register(
+    DockerAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    XcodeAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    AndroidAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    GitAnalyzer(logger: container.logger, scanner: container.scanner)
+)
 
 // Route
 let args = CommandLine.arguments.dropFirst()
