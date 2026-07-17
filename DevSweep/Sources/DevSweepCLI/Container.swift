@@ -7,19 +7,25 @@ public final class Container: Sendable {
     public let scanner: any StorageScanner
     public let projectDiscovery: ProjectDiscovery
     public let manifestParser: ManifestParserRegistry
+    public let processScanner: ProcessScanner
+    public let riskEngine: RiskEngine
 
     public init(
         logger: Logger,
         pluginLoader: any PluginLoader,
         scanner: any StorageScanner,
         projectDiscovery: ProjectDiscovery,
-        manifestParser: ManifestParserRegistry
+        manifestParser: ManifestParserRegistry,
+        processScanner: ProcessScanner,
+        riskEngine: RiskEngine
     ) {
         self.logger = logger
         self.pluginLoader = pluginLoader
         self.scanner = scanner
         self.projectDiscovery = projectDiscovery
         self.manifestParser = manifestParser
+        self.processScanner = processScanner
+        self.riskEngine = riskEngine
     }
 
     public static func makeDefault() -> Container {
@@ -38,12 +44,25 @@ public final class Container: Sendable {
             CocoaPodsParser(),
             ComposerParser(),
         ])
+        let processScanner = ProcessScanner()
+        let riskEngine = RiskEngine(factors: [
+            RunningProcessFactor(),
+            ProjectReferenceFactor(),
+            RecentUseFactor(),
+            PackageManagerFactor(),
+            SystemComponentFactor(),
+            CacheTypeFactor(),
+            InstallMethodFactor(),
+            VersionAgeFactor(),
+        ])
         return Container(
             logger: logger,
             pluginLoader: pluginLoader,
             scanner: scanner,
             projectDiscovery: projectDiscovery,
-            manifestParser: manifestParser
+            manifestParser: manifestParser,
+            processScanner: processScanner,
+            riskEngine: riskEngine
         )
     }
 }

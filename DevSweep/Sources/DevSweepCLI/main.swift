@@ -33,8 +33,12 @@ case "scan":
     await ScanCommand.run(using: container)
 case "deps":
     await DepsCommand.run(projectScanner: projectScanner, args: Array(subArgs))
+case "recommend":
+    await RecommendCommand.run(using: container, projectScanner: projectScanner)
+case "explain":
+    await ExplainCommand.run(using: container, projectScanner: projectScanner, path: subArgs.first ?? "")
 default:
-    fputs("Usage: devsweep {scan | deps [tool] | deps unused}\n", stderr)
+    fputs("Usage: devsweep {scan | deps | recommend | explain <path>}\n", stderr)
     exit(1)
 }
 
@@ -46,35 +50,8 @@ enum ScanCommand {
         let analyzers = container.pluginLoader.loadAll()
         container.logger.info("Loaded \(analyzers.count) analyzer(s)")
 
-        var results: [AnalysisResult] = []
-        var errorMessages: [String] = []
-
-        await withTaskGroup(of: (String, Result<AnalysisResult, Error>).self) { group in
-            for analyzer in analyzers {
-                group.addTask {
-                    do {
-                        let result = try await analyzer.scan()
-                        return (analyzer.id, .success(result))
-                    } catch {
-                        return (analyzer.id, .failure(error))
-                    }
-                }
-            }
-            for await (_, result) in group {
-                switch result {
-                case .success(let r): results.append(r)
-                case .failure(let e): errorMessages.append(e.localizedDescription)
-                }
-            }
-        }
-
+        let results = await collectResults(using: container)
         let elapsed = Int(Date().timeIntervalSince(start) * 1000)
-
-        if !errorMessages.isEmpty {
-            container.logger.warn(
-                "\(errorMessages.count) analyzer(s) failed: \(errorMessages.joined(separator: "; "))"
-            )
-        }
 
         let output = ScanOutput(
             version: 1,
@@ -133,3 +110,105 @@ enum DepsCommand {
         }
     }
 }
+
+// MARK: - Recommend
+
+enum RecommendCommand {
+    static func run(using container: Container, projectScanner: ProjectScannerAnalyzer) async {
+        let results = await collectResults(using: container)
+        let graph = await projectScanner.graph()
+        let procPaths = container.processScanner.runningProcessPaths()
+
+        let context = RiskContext(
+            dependencyGraph: graph,
+            runningProcessPaths: procPaths
+        )
+
+        let recommendations = container.riskEngine.evaluate(results: results, context: context)
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        guard let json = try? encoder.encode(recommendations) else {
+            fputs("Error: failed to encode recommendations\n", stderr)
+            exit(2)
+        }
+
+        fputs(String(data: json, encoding: .utf8)!, stdout)
+    }
+}
+
+// MARK: - Explain
+
+enum ExplainCommand {
+    static func run(
+        using container: Container,
+        projectScanner: ProjectScannerAnalyzer,
+        path: String
+    ) async {
+        guard !path.isEmpty else {
+            fputs("Usage: devsweep explain <path>\n", stderr)
+            exit(1)
+        }
+
+        let results = await collectResults(using: container)
+        let graph = await projectScanner.graph()
+        let procPaths = container.processScanner.runningProcessPaths()
+
+        let context = RiskContext(
+            dependencyGraph: graph,
+            runningProcessPaths: procPaths
+        )
+
+        // Find recommendations for matching paths
+        let allRecs = container.riskEngine.evaluate(results: results, context: context)
+        let matches = allRecs.filter { $0.itemPath.contains(path) }
+
+        if matches.isEmpty {
+            print("No items found matching: \(path)")
+        } else {
+            for rec in matches {
+                print("Path: \(rec.itemPath)")
+                print("Verdict: \(rec.verdict.rawValue)")
+                print("Confidence: \(rec.confidence)%")
+                if !rec.factors.isEmpty {
+                    print("Reasons to remove:")
+                    for f in rec.factors { print("  + \(f)") }
+                }
+                if !rec.conflictingFactors.isEmpty {
+                    print("Reasons to keep:")
+                    for f in rec.conflictingFactors { print("  - \(f)") }
+                }
+                print("---")
+            }
+        }
+    }
+}
+
+// MARK: - Shared
+
+private func collectResults(using container: Container) async -> [AnalysisResult] {
+    let analyzers = container.pluginLoader.loadAll()
+    var results: [AnalysisResult] = []
+
+    await withTaskGroup(of: (String, Result<AnalysisResult, Error>).self) { group in
+        for analyzer in analyzers {
+            group.addTask {
+                do {
+                    let result = try await analyzer.scan()
+                    return (analyzer.id, .success(result))
+                } catch {
+                    return (analyzer.id, .failure(error))
+                }
+            }
+        }
+        for await (_, result) in group {
+            switch result {
+            case .success(let r): results.append(r)
+            case .failure: break
+            }
+        }
+    }
+
+    return results
+}
+
