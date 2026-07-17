@@ -35,8 +35,11 @@ DevSweep/
 - [ ] `protocol PluginLoader` — `func loadAll() -> [any Analyzer]`
 
 ### 1.3 Data models (value types, Codable)
-- [ ] `StorageItem` — path, size, fileCount, lastModified, lastAccessed
-- [ ] `AnalysisResult` — analyzerId, items: [StorageItem], totalSize, errors: [String]
+- [ ] `StorageItem` — path, sizeKB, sizeMB, fileCount, lastModified, lastAccessed
+  - `sizeKB: Double` — more precise for small items (e.g., `2.5` KB)
+  - `sizeMB: Double` — human-readable for larger items (e.g., `1420.3` MB)
+  - Both are computed from raw bytes and stored together; consumers pick whichever fits the UI
+- [ ] `AnalysisResult` — analyzerId, items: [StorageItem], totalSizeKB, totalSizeMB, errors: [String]
 - [ ] Empty `Recommendation` and `Risk` stubs (filled in milestone 5)
 
 ### 1.4 Plugin loader
