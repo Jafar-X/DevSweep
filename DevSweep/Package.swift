@@ -7,22 +7,28 @@ let package = Package(
     products: [
         .executable(name: "devsweep", targets: ["DevSweepCLI"]),
         .executable(name: "test-runner", targets: ["TestRunner"]),
+        .executable(name: "DevSweep", targets: ["DevSweepApp"]),
     ],
     dependencies: [],
     targets: [
         .target(name: "Core"),
         .target(name: "Services", dependencies: ["Core"]),
         .target(name: "Plugins", dependencies: ["Core", "Services"]),
+        .target(
+            name: "DevSweepKit",
+            dependencies: ["Core", "Services", "Plugins"]
+        ),
         .executableTarget(
             name: "DevSweepCLI",
-            dependencies: ["Core", "Services", "Plugins"]
+            dependencies: ["DevSweepKit"]
         ),
         .executableTarget(
             name: "TestRunner",
-            dependencies: ["Core", "Services", "Plugins"]
+            dependencies: ["DevSweepKit"]
         ),
-        // Uncomment when Xcode is installed (XCTest/Swift Testing frameworks not in CLT):
-        // .testTarget(name: "CoreTests", dependencies: ["Core"]),
-        // .testTarget(name: "PluginTests", dependencies: ["Plugins", "Core"]),
+        .executableTarget(
+            name: "DevSweepApp",
+            dependencies: ["DevSweepKit"]
+        ),
     ]
 )

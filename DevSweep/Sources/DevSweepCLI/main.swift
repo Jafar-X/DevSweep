@@ -2,6 +2,7 @@ import Foundation
 import Core
 import Services
 import Plugins
+import DevSweepKit
 
 // Boot
 let container = Container.makeDefault()
