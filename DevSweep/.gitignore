@@ -1,0 +1,11 @@
+# SPM
+.build/
+.swiftpm/
+DerivedData/
+
+# Xcode (if opened via xcode-open)
+*.xcuserdata
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
