@@ -4,12 +4,12 @@ import Services
 public final class Container: Sendable {
     public let logger: Logger
     public let pluginLoader: any PluginLoader
-    public let scanner: any Scanner
+    public let scanner: any StorageScanner
 
     public init(
         logger: Logger,
         pluginLoader: any PluginLoader,
-        scanner: any Scanner
+        scanner: any StorageScanner
     ) {
         self.logger = logger
         self.pluginLoader = pluginLoader

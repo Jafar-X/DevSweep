@@ -4,11 +4,23 @@ import Services
 import Plugins
 
 // Boot
-AnalyzerRegistry.register(
-    DummyAnalyzer(logger: Logger(minimumLevel: .debug))
-)
-
 let container = Container.makeDefault()
+
+AnalyzerRegistry.register(
+    DummyAnalyzer(logger: container.logger)
+)
+AnalyzerRegistry.register(
+    HomebrewAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    NodeAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    JavaAnalyzer(logger: container.logger, scanner: container.scanner)
+)
+AnalyzerRegistry.register(
+    PythonAnalyzer(logger: container.logger, scanner: container.scanner)
+)
 
 // Route
 let args = CommandLine.arguments.dropFirst()

@@ -29,19 +29,40 @@ struct TestRunner {
         // --- Scanner ---
 
         let scanner = DefaultScanner()
+
+        // Empty directory
         let tmp = FileManager.default.temporaryDirectory
             .appendingPathComponent("devsweep-test-empty-\(UUID())")
         do {
             try FileManager.default.createDirectory(at: tmp, withIntermediateDirectories: true)
             let items = try await scanner.scan(paths: [tmp])
             try? FileManager.default.removeItem(at: tmp)
-            if items.isEmpty {
-                pass("Scanner: empty directory returns empty")
+            if let item = items.first, item.fileCount == 0, item.sizeKB == 0 {
+                pass("Scanner: empty directory returns zero-size item")
             } else {
-                fail("Scanner: empty directory returns empty", "got \(items.count) items")
+                fail("Scanner: empty directory", "expected fileCount=0 size=0, got \(items.first?.fileCount ?? -1) files")
             }
         } catch {
-            fail("Scanner: empty directory returns empty", "\(error)")
+            fail("Scanner: empty directory", "\(error)")
+        }
+
+        // Directory with known files
+        let tmp2 = FileManager.default.temporaryDirectory
+            .appendingPathComponent("devsweep-test-files-\(UUID())")
+        do {
+            try FileManager.default.createDirectory(at: tmp2, withIntermediateDirectories: true)
+            let data = Data(repeating: 0, count: 2048)
+            try data.write(to: tmp2.appendingPathComponent("a.txt"))
+            try data.write(to: tmp2.appendingPathComponent("b.txt"))
+            let items = try await scanner.scan(paths: [tmp2])
+            try? FileManager.default.removeItem(at: tmp2)
+            if let item = items.first, item.fileCount == 2, item.sizeKB > 0 {
+                pass("Scanner: directory with files returns correct counts")
+            } else {
+                fail("Scanner: directory with files", "expected 2 files with size > 0, got \(items.first?.fileCount ?? 0) files")
+            }
+        } catch {
+            fail("Scanner: directory with files", "\(error)")
         }
 
         // --- Dummy Analyzer ---
