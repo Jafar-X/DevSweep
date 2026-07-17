@@ -3,6 +3,9 @@
 .swiftpm/
 DerivedData/
 
+# App bundle binary (copied from .build)
+DevSweep.app/Contents/MacOS/DevSweep
+
 # Xcode
 *.xcuserdata
 *.xcworkspace/xcuserdata/
