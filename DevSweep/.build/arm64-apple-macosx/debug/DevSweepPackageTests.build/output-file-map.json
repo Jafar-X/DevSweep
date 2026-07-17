@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/master.swiftdeps"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/runner.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepPackageTests.build/runner.dia"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(swift build *)",
+      "Bash(swift run *)",
+      "Bash(swift test *)",
+      "Bash(xcode-select -p)",
+      "Bash(xcrun --show-sdk-path)",
+      "Bash(swift *)"
+    ]
+  }
+}

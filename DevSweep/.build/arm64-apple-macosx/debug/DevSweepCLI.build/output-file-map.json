@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/master.swiftdeps"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/Container.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.dia"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/main.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.dia"
+  }
+}

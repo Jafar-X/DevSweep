@@ -1,0 +1,1217 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Core-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/sources",
+      "importPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/AnalysisResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Recommendation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Risk.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/ScanOutput.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/StorageItem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/AnalyzerRegistry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/DefaultPluginLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Analyzer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/PluginLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Scanner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/StorageEngine/DefaultScanner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Core",
+      "moduleOutputPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule",
+      "objects" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalysisResult.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Recommendation.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Risk.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/ScanOutput.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/StorageItem.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalyzerRegistry.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultPluginLoader.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Analyzer.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/PluginLoader.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Scanner.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultScanner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "6",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "devsweep"
+      ],
+      "outputFileMapPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalysisResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Recommendation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Risk.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/ScanOutput.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/StorageItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalyzerRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultPluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Analyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/PluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Scanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultScanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/AnalysisResult.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Recommendation.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Risk.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/ScanOutput.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/StorageItem.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/AnalyzerRegistry.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/DefaultPluginLoader.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Analyzer.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/PluginLoader.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Scanner.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/StorageEngine/DefaultScanner.swift"
+      ],
+      "tempsPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.DevSweepCLI-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/sources",
+      "importPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/Container.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Services.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Plugins.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "DevSweepCLI",
+      "moduleOutputPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/DevSweepCLI.swiftmodule",
+      "objects" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.swift.o",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "DevSweepCLI_main",
+        "-color-diagnostics",
+        "-swift-version",
+        "6",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "devsweep"
+      ],
+      "outputFileMapPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/DevSweepCLI.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/Container.swift",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/main.swift"
+      ],
+      "tempsPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Plugins-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/sources",
+      "importPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Plugins/Dummy/DummyAnalyzer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Services.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Plugins",
+      "moduleOutputPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Plugins.swiftmodule",
+      "objects" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/include/Plugins-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "6",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "devsweep"
+      ],
+      "outputFileMapPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Plugins.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Plugins/Dummy/DummyAnalyzer.swift"
+      ],
+      "tempsPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Services-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/sources",
+      "importPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Services/Logging/Logger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Services",
+      "moduleOutputPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Services.swiftmodule",
+      "objects" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/Logger.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/include/Services-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "6",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "devsweep"
+      ],
+      "outputFileMapPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/Logger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Services.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Services/Logging/Logger.swift"
+      ],
+      "tempsPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TestRunner-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/sources",
+      "importPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/TestRunner/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Services.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/Plugins.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "TestRunner",
+      "moduleOutputPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/TestRunner.swiftmodule",
+      "objects" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "TestRunner_main",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "6",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "devsweep"
+      ],
+      "outputFileMapPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules/TestRunner.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/TestRunner/main.swift"
+      ],
+      "tempsPath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Core" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "Core",
+      "-package-name",
+      "devsweep",
+      "-c",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/AnalysisResult.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Recommendation.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Risk.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/ScanOutput.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/StorageItem.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/AnalyzerRegistry.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/DefaultPluginLoader.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Analyzer.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/PluginLoader.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Scanner.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/StorageEngine/DefaultScanner.swift",
+      "-I",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "6",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "devsweep",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "DevSweepCLI" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "DevSweepCLI",
+      "-package-name",
+      "devsweep",
+      "-c",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/Container.swift",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/main.swift",
+      "-I",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "DevSweepCLI_main",
+      "-color-diagnostics",
+      "-swift-version",
+      "6",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "devsweep",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "Plugins" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "Plugins",
+      "-package-name",
+      "devsweep",
+      "-c",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Plugins/Dummy/DummyAnalyzer.swift",
+      "-I",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/include/Plugins-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "6",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "devsweep",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "Services" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "Services",
+      "-package-name",
+      "devsweep",
+      "-c",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Services/Logging/Logger.swift",
+      "-I",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/include/Services-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "6",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "devsweep",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "TestRunner" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "TestRunner",
+      "-package-name",
+      "devsweep",
+      "-c",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/TestRunner/main.swift",
+      "-I",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "TestRunner_main",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "6",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "devsweep",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Core" : [
+
+    ],
+    "DevSweepCLI" : [
+      "Plugins",
+      "Services",
+      "Core"
+    ],
+    "Plugins" : [
+      "Services",
+      "Core"
+    ],
+    "Services" : [
+      "Core"
+    ],
+    "TestRunner" : [
+      "Plugins",
+      "Services",
+      "Core"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/AnalysisResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Recommendation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/Risk.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/ScanOutput.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Models/StorageItem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/AnalyzerRegistry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/PluginLoader/DefaultPluginLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Analyzer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/PluginLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/Protocols/Scanner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Core/StorageEngine/DefaultScanner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/sources"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/Container.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/DevSweepCLI/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/sources"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Plugins/Dummy/DummyAnalyzer.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/sources"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Services/Logging/Logger.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/sources"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/TestRunner/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/sources"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/devsweep-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/devsweep-entitlement.plist"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/devsweep.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalysisResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Analyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalyzerRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultPluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultScanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/PluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Recommendation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Risk.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/ScanOutput.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Scanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/StorageItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/Container.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/DevSweepCLI.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/Logger.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/devsweep.product/Objects.LinkFileList"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/test-runner-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/test-runner-entitlement.plist"
+    },
+    "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/test-runner.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalysisResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Analyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/AnalyzerRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultPluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/DefaultScanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/PluginLoader.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Recommendation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Risk.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/ScanOutput.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/Scanner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Core.build/StorageItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Services.build/Logger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/TestRunner.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/test-runner.product/Objects.LinkFileList"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/master.swiftdeps"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/Tests/CoreTests/PluginLoaderTests/DefaultPluginLoaderTests.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultPluginLoaderTests.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultPluginLoaderTests.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultPluginLoaderTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultPluginLoaderTests.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultPluginLoaderTests.dia"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/Tests/CoreTests/StorageEngineTests/DefaultScannerTests.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultScannerTests.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultScannerTests.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultScannerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultScannerTests.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/CoreTests.build/DefaultScannerTests.dia"
+  }
+}

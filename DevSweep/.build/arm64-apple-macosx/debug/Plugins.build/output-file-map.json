@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/master.swiftdeps"
+  },
+  "/Users/jafarx/Developer/mac_cleaner/DevSweep/Sources/Plugins/Dummy/DummyAnalyzer.swift": {
+    "dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.d",
+    "object": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swift.o",
+    "swiftmodule": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer~partial.swiftmodule",
+    "swift-dependencies": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.swiftdeps",
+    "diagnostics": "/Users/jafarx/Developer/mac_cleaner/DevSweep/.build/arm64-apple-macosx/debug/Plugins.build/DummyAnalyzer.dia"
+  }
+}
