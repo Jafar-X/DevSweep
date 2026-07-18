@@ -4,6 +4,7 @@ import Foundation
 
 public struct RunningProcessFactor: RiskFactor {
     public let name = "Running Process"
+    public var isVeto: Bool { true }
 
     public init() {}
 
@@ -33,7 +34,7 @@ public struct ProjectReferenceFactor: RiskFactor {
             return .keep(reason: "Used by \(projects.count) project(s)")
         }
         if graph.projects.isEmpty {
-            return .neutral  // No project scan data available
+            return .neutral
         }
         return .safe(reason: "Not referenced by any project")
     }
@@ -92,6 +93,7 @@ public struct PackageManagerFactor: RiskFactor {
 
 public struct SystemComponentFactor: RiskFactor {
     public let name = "System Component"
+    public var isVeto: Bool { true }
 
     private let systemPrefixes: Set<String> = [
         "/usr/bin", "/usr/lib", "/usr/sbin",
@@ -147,17 +149,7 @@ public struct InstallMethodFactor: RiskFactor {
     public init() {}
 
     public func assess(item: StorageItem, context: RiskContext) -> RiskImpact {
-        // Directories under known manual install locations are higher risk
-        let manualPrefixes = [
-            "/usr/local/Cellar",
-            "/opt/homebrew/Cellar",
-        ]
-        for prefix in manualPrefixes {
-            if item.path.hasPrefix(prefix) {
-                return .neutral  // Homebrew is managed; covered by PackageManagerFactor
-            }
-        }
-        return .neutral  // Most paths are neutral for this factor
+        return .neutral
     }
 }
 

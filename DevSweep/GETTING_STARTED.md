@@ -32,6 +32,10 @@ swift run devsweep scan 2>/dev/null | jq .
 ## Run (GUI)
 
 ```bash
+# One-liner (debug build):
+swift build && cp .build/debug/DevSweep DevSweep.app/Contents/MacOS/DevSweep && open DevSweep.app
+
+# Or via script (release build):
 ./build-app.sh
 open DevSweep.app
 ```

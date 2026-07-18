@@ -21,37 +21,70 @@ public final class HomebrewAnalyzer: Analyzer, @unchecked Sendable {
             return emptyResult()
         }
 
-        async let formulae = runBrew(brewPath, ["list", "--formula"])
-        async let casks = runBrew(brewPath, ["list", "--cask"])
-        async let servicesOutput = runBrew(brewPath, ["services", "list"])
-        async let infoJSON = runBrew(brewPath, ["info", "--json=v2", "--installed"])
-
-        let formulaList = parseLines(await formulae)
-        let caskList = parseLines(await casks)
-        let runningServices = parseRunningServices(await servicesOutput)
-        _ = parseBrewInfo(await infoJSON)
-
-        // Scan brew prefix for total storage
         let brewPrefix = brewPath
             .deletingLastPathComponent()  // bin
-            .deletingLastPathComponent()  // brew path
-        let scannedItems = try? await scanner.scan(paths: [brewPrefix])
-        let allItems: [StorageItem] = scannedItems ?? []
+            .deletingLastPathComponent()  // Homebrew prefix
 
-        let totalKB = allItems.reduce(0) { $0 + $1.sizeKB }
-        let totalMB = allItems.reduce(0) { $0 + $1.sizeMB }
+        async let infoJSON = runBrew(brewPath, ["info", "--json=v2", "--installed"])
+        async let servicesOutput = runBrew(brewPath, ["services", "list"])
+
+        let packageNames = parseBrewInfo(await infoJSON)
+        let runningServices = parseRunningServices(await servicesOutput)
+
+        // Scan each formula/cask directory for accurate per-package sizes
+        var items: [StorageItem] = []
+        let fm = FileManager.default
+        let cellarDir = brewPrefix.appendingPathComponent("Cellar")
+        let caskDir = brewPrefix.appendingPathComponent("Caskroom")
+
+        for name in packageNames {
+            let cellarPkg = cellarDir.appendingPathComponent(name)
+            let caskPkg = caskDir.appendingPathComponent(name)
+
+            if fm.fileExists(atPath: cellarPkg.path),
+               let scanned = try? await scanner.scan(paths: [cellarPkg]).first {
+                items.append(StorageItem(
+                    path: cellarPkg.path,
+                    sizeKB: scanned.sizeKB,
+                    sizeMB: scanned.sizeMB,
+                    fileCount: scanned.fileCount,
+                    lastModified: scanned.lastModified,
+                    lastAccessed: scanned.lastAccessed
+                ))
+            } else if fm.fileExists(atPath: caskPkg.path),
+                      let scanned = try? await scanner.scan(paths: [caskPkg]).first {
+                items.append(StorageItem(
+                    path: caskPkg.path,
+                    sizeKB: scanned.sizeKB,
+                    sizeMB: scanned.sizeMB,
+                    fileCount: scanned.fileCount,
+                    lastModified: scanned.lastModified,
+                    lastAccessed: scanned.lastAccessed
+                ))
+            } else {
+                // Some packages exist in brew info but not as Cellar dirs (e.g. virtual packages)
+                items.append(StorageItem(
+                    path: "homebrew://\(name)",
+                    sizeKB: 0, sizeMB: 0, fileCount: 0,
+                    lastModified: Date(), lastAccessed: Date()
+                ))
+            }
+        }
+
+        let totalKB = items.reduce(0) { $0 + $1.sizeKB }
+        let totalMB = items.reduce(0) { $0 + $1.sizeMB }
 
         logger.info(
-            "Homebrew: \(formulaList.count) formulae, \(caskList.count) casks, \(runningServices) running services"
+            "Homebrew: \(items.count) packages, \(runningServices) running services"
         )
 
         return AnalysisResult(
             analyzerId: id,
             analyzerName: name,
-            items: allItems,
+            items: items,
             totalSizeKB: totalKB,
             totalSizeMB: totalMB,
-            itemCount: formulaList.count + caskList.count,
+            itemCount: items.count,
             errors: []
         )
     }
@@ -59,15 +92,9 @@ public final class HomebrewAnalyzer: Analyzer, @unchecked Sendable {
     // MARK: - Private
 
     private func findBrew() -> URL? {
-        let candidates = [
-            "/opt/homebrew/bin/brew",
-            "/usr/local/bin/brew",
-        ]
-        for path in candidates {
+        for path in ["/opt/homebrew/bin/brew", "/usr/local/bin/brew"] {
             let url = URL(fileURLWithPath: path)
-            if FileManager.default.isExecutableFile(atPath: url.path) {
-                return url
-            }
+            if FileManager.default.isExecutableFile(atPath: url.path) { return url }
         }
         return nil
     }
@@ -82,19 +109,13 @@ public final class HomebrewAnalyzer: Analyzer, @unchecked Sendable {
             process.standardOutput = pipe
             process.standardError = FileHandle.nullDevice
 
-            do {
-                try process.run()
-            } catch {
+            do { try process.run() } catch {
                 continuation.resume(returning: "")
                 return
             }
-
-            // Read concurrently so the pipe buffer doesn't fill and deadlock.
             let data = pipe.fileHandleForReading.readDataToEndOfFile()
             process.waitUntilExit()
-
-            let output = String(data: data, encoding: .utf8) ?? ""
-            continuation.resume(returning: output)
+            continuation.resume(returning: String(data: data, encoding: .utf8) ?? "")
         }
     }
 
@@ -105,38 +126,31 @@ public final class HomebrewAnalyzer: Analyzer, @unchecked Sendable {
     }
 
     private func parseRunningServices(_ raw: String) -> Int {
-        parseLines(raw)
-            .filter { $0.hasPrefix("started") || $0.contains("started") }
-            .count
+        parseLines(raw).filter { $0.hasPrefix("started") || $0.contains("started") }.count
     }
 
-    private func parseBrewInfo(_ raw: String) -> [(name: String, sizeKB: Double)] {
+    /// Returns just the package names (both formulae and casks) from brew info JSON.
+    private func parseBrewInfo(_ raw: String) -> [String] {
         guard let data = raw.data(using: .utf8),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let formulae = json["formulae"] as? [[String: Any]]
-        else {
-            return []
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+        else { return [] }
+
+        var names: [String] = []
+
+        if let formulae = json["formulae"] as? [[String: Any]] {
+            names += formulae.compactMap { $0["name"] as? String }
+        }
+        if let casks = json["casks"] as? [[String: Any]] {
+            names += casks.compactMap { ($0["token"] as? String) ?? ($0["name"] as? String) }
         }
 
-        return formulae.compactMap { formula in
-            guard let name = formula["name"] as? String else { return nil }
-            let installInfo = formula["installed"] as? [[String: Any]]
-            let totalBytes = installInfo?.compactMap {
-                ($0["size_in_bytes"] as? Int64) ?? ($0["size"] as? Int64)
-            }.reduce(0, +) ?? 0
-            return (name, Double(totalBytes) / 1024.0)
-        }
+        return names
     }
 
     private func emptyResult() -> AnalysisResult {
         AnalysisResult(
-            analyzerId: id,
-            analyzerName: name,
-            items: [],
-            totalSizeKB: 0,
-            totalSizeMB: 0,
-            itemCount: 0,
-            errors: []
+            analyzerId: id, analyzerName: name,
+            items: [], totalSizeKB: 0, totalSizeMB: 0, itemCount: 0, errors: []
         )
     }
 }

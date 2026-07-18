@@ -2,51 +2,52 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(AppViewModel.self) private var viewModel
-    @State private var selectedTab: Tab = .dashboard
+    @State private var selectedItem: SidebarItem? = .dashboard
 
-    enum Tab: String, CaseIterable, Hashable {
-        case dashboard = "Dashboard"
-        case recommendations = "Recommendations"
-
-        var icon: String {
-            switch self {
-            case .dashboard: "square.grid.2x2"
-            case .recommendations: "list.bullet.clipboard"
-            }
-        }
+    enum SidebarItem: Hashable {
+        case dashboard
+        case recommendations
+        case analyzer(id: String)
     }
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selectedTab) {
+            List(selection: $selectedItem) {
                 Section("Overview") {
-                    ForEach(Tab.allCases, id: \.self) { tab in
-                        Label(tab.rawValue, systemImage: tab.icon)
-                            .tag(tab)
+                    NavigationLink(value: SidebarItem.dashboard) {
+                        Label("Dashboard", systemImage: "square.grid.2x2")
+                    }
+                    NavigationLink(value: SidebarItem.recommendations) {
+                        Label("Recommendations", systemImage: "list.bullet.clipboard")
                     }
                 }
 
                 Section("Analyzers") {
                     ForEach(viewModel.results, id: \.analyzerId) { result in
-                        Label(result.analyzerName, systemImage: iconFor(result.analyzerId))
-                            .tag(Tab.dashboard)  // handled in detail
-                            .badge(formatSize(result.totalSizeMB))
+                        NavigationLink(value: SidebarItem.analyzer(id: result.analyzerId)) {
+                            Label(result.analyzerName, systemImage: iconFor(result.analyzerId))
+                                .badge(formatSize(result.totalSizeMB))
+                        }
                     }
                 }
             }
             .listStyle(.sidebar)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
         } detail: {
-            switch selectedTab {
-            case .dashboard:
+            switch selectedItem {
+            case .dashboard, nil:
                 DashboardView()
             case .recommendations:
                 RecommendationListView()
+            case .analyzer(let id):
+                if let result = viewModel.results(for: id) {
+                    AnalyzerDetailView(result: result)
+                } else {
+                    ContentUnavailableView("Not found", systemImage: "questionmark")
+                }
             }
         }
-        .task {
-            await viewModel.refresh()
-        }
+        .task { await viewModel.refresh() }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: { Task { await viewModel.refresh() } }) {
@@ -70,6 +71,7 @@ struct ContentView: View {
         case "git": "arrow.triangle.pull"
         case "projects": "folder"
         case "dummy": "questionmark"
+        case "junk": "trash"
         default: "square"
         }
     }

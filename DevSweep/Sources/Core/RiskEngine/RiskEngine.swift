@@ -28,6 +28,7 @@ public struct RiskEngine: Sendable {
     private func evaluateSingle(item: StorageItem, context: RiskContext) -> Recommendation {
         var safeReasons: [String] = []
         var keepReasons: [String] = []
+        var hasVeto = false
 
         for factor in factors {
             switch factor.assess(item: item, context: context) {
@@ -35,25 +36,34 @@ public struct RiskEngine: Sendable {
                 safeReasons.append("[\(factor.name)] \(reason)")
             case .keep(let reason):
                 keepReasons.append("[\(factor.name)] \(reason)")
+                if factor.isVeto {
+                    hasVeto = true
+                }
             case .neutral:
                 break
             }
+        }
+
+        // Veto factors (RunningProcess, SystemComponent) force "keep" regardless.
+        if hasVeto {
+            return Recommendation(
+                itemPath: item.path,
+                verdict: .keep,
+                confidence: max(10, 100 - keepReasons.count * 15),
+                factors: safeReasons,
+                conflictingFactors: keepReasons
+            )
         }
 
         let safeCount = safeReasons.count
         let keepCount = keepReasons.count
         let total = safeCount + keepCount
 
-        // Confidence: proportion of factors that agree, scaled to 0..100.
-        // Factors for removal raise confidence; factors against lower it.
         let safetyRatio = total > 0 ? Double(safeCount) / Double(total) : 0.5
         let baseConfidence = Int(safetyRatio * 100)
-
-        // Boost confidence when multiple factors agree
         let agreementBonus = min(total * 5, 20)
         var confidence = min(baseConfidence + agreementBonus, 100)
 
-        // Penalize if keep reasons exist
         if keepCount > 0 {
             confidence = max(confidence - keepCount * 10, 10)
         }

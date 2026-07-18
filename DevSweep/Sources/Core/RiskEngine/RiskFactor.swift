@@ -22,5 +22,11 @@ public enum RiskImpact: Sendable {
 
 public protocol RiskFactor: Sendable {
     var name: String { get }
+    /// If true, a `.keep` from this factor overrides all other factors.
+    var isVeto: Bool { get }
     func assess(item: StorageItem, context: RiskContext) -> RiskImpact
+}
+
+public extension RiskFactor {
+    var isVeto: Bool { false }
 }

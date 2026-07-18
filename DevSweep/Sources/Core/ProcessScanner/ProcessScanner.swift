@@ -26,7 +26,6 @@ public struct ProcessScanner: Sendable {
             let trimmed = line.trimmingCharacters(in: .whitespaces)
             guard !trimmed.isEmpty, !trimmed.hasPrefix("-") else { continue }
 
-            // Extract path-like tokens (starting with / or ~/)
             let tokens = trimmed.split(separator: " ").map(String.init)
             for token in tokens {
                 if token.hasPrefix("/") {

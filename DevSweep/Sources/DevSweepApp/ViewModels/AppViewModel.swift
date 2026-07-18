@@ -99,4 +99,15 @@ public final class AppViewModel {
     func results(for analyzerId: String) -> AnalysisResult? {
         results.first { $0.analyzerId == analyzerId }
     }
+
+    /// Joins StorageItems from an analyzer's result with their Recommendations.
+    func recommendations(for analyzerId: String) -> [(StorageItem, Recommendation?)] {
+        guard let result = results.first(where: { $0.analyzerId == analyzerId }) else {
+            return []
+        }
+        let recByPath = Dictionary(grouping: recommendations, by: \.itemPath)
+        return result.items.map { item in
+            (item, recByPath[item.path]?.first)
+        }
+    }
 }
